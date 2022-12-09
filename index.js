@@ -19,7 +19,7 @@
 
 const addon = require('./build/Release/grandiose');
 
-export function findResource(){
+// export function findResource(){
 // const { type } = require('os');
 
 console.log("正在寻找设备源......");
@@ -27,7 +27,7 @@ console.log("正在寻找设备源......");
 console.log("设备源数据类型：" + addon.find());
 //接收NDI推流，必须拥有一个“source”的入参
 // addon.receive();
-}
+// }
 
 
 
@@ -55,7 +55,8 @@ console.log("设备源数据类型：" + addon.find());
 // const FORMAT_TYPE_FIELD_1 = 3;
 
 // Default NDI audio format
-// Channels stored one after the other in each block - 32-bit floating point values
+// Channels stored one after the other in each block - 32-bit floating point v
+alues
 // const AUDIO_FORMAT_FLOAT_32_SEPARATE = 0;
 // Alternative NDI audio foramt
 // Channels stored as channel-interleaved 32-bit floating point values
