@@ -12,18 +12,23 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
-const COLOR_FORMAT_BGRX_BGRA = 0; // No alpha channel: BGRX, Alpha channel: BGRA
-const COLOR_FORMAT_UYVY_BGRA = 1; // No alpha channel: UYVY, Alpha channel: BGRA
-const COLOR_FORMAT_RGBX_RGBA = 2; // No alpha channel: RGBX, Alpha channel: RGBA
-const COLOR_FORMAT_UYVY_RGBA = 3; // No alpha channel: UYVY, Alpha channel: RGBA
+// const COLOR_FORMAT_BGRX_BGRA = 0; // No alpha channel: BGRX, Alpha channel: BGRA
+// const COLOR_FORMAT_UYVY_BGRA = 1; // No alpha channel: UYVY, Alpha channel: BGRA
+// const COLOR_FORMAT_RGBX_RGBA = 2; // No alpha channel: RGBX, Alpha channel: RGBA
+// const COLOR_FORMAT_UYVY_RGBA = 3; // No alpha channel: UYVY, Alpha channel: RGBA
 
-// const { type } = require('os');
 const addon = require('./build/Release/grandiose');
+
+export function findResource(){
+// const { type } = require('os');
+
 console.log("正在寻找设备源......");
 //addon.find()返回的是对象
 console.log("设备源数据类型：" + addon.find());
 //接收NDI推流，必须拥有一个“source”的入参
 // addon.receive();
+}
+
 
 
 // const SegfaultHandler = require('segfault-handler');
@@ -35,29 +40,29 @@ console.log("设备源数据类型：" + addon.find());
 // this format will return images in this format. The image data pointer will still point to the
 // "top" of the image, althought he stride will be negative. You can get the "bottom" line of the image
 // using : video_data.p_data + (video_data.yres - 1)*video_data.line_stride_in_bytes
-const COLOR_FORMAT_BGRX_BGRA_FLIPPED = 200;
+// const COLOR_FORMAT_BGRX_BGRA_FLIPPED = 200;
 
-const COLOR_FORMAT_FASTEST = 100;
+// const COLOR_FORMAT_FASTEST = 100;
 
-const BANDWIDTH_METADATA_ONLY = -10; // Receive metadata.
-const BANDWIDTH_AUDIO_ONLY = 10; // Receive metadata, audio.
-const BANDWIDTH_LOWEST = 0; // Receive metadata, audio, video at a lower bandwidth and resolution.
-const BANDWIDTH_HIGHEST = 100; // Receive metadata, audio, video at full resolution.
+// const BANDWIDTH_METADATA_ONLY = -10; // Receive metadata.
+// const BANDWIDTH_AUDIO_ONLY = 10; // Receive metadata, audio.
+// const BANDWIDTH_LOWEST = 0; // Receive metadata, audio, video at a lower bandwidth and resolution.
+// const BANDWIDTH_HIGHEST = 100; // Receive metadata, audio, video at full resolution.
 
-const FORMAT_TYPE_PROGRESSIVE = 1;
-const FORMAT_TYPE_INTERLACED = 0;
-const FORMAT_TYPE_FIELD_0 = 2;
-const FORMAT_TYPE_FIELD_1 = 3;
+// const FORMAT_TYPE_PROGRESSIVE = 1;
+// const FORMAT_TYPE_INTERLACED = 0;
+// const FORMAT_TYPE_FIELD_0 = 2;
+// const FORMAT_TYPE_FIELD_1 = 3;
 
 // Default NDI audio format
 // Channels stored one after the other in each block - 32-bit floating point values
-const AUDIO_FORMAT_FLOAT_32_SEPARATE = 0;
+// const AUDIO_FORMAT_FLOAT_32_SEPARATE = 0;
 // Alternative NDI audio foramt
 // Channels stored as channel-interleaved 32-bit floating point values
-const AUDIO_FORMAT_FLOAT_32_INTERLEAVED = 1;
+// const AUDIO_FORMAT_FLOAT_32_INTERLEAVED = 1;
 // Alternative NDI audio format
 // Channels stored as channel-interleaved 16-bit integer values
-const AUDIO_FORMAT_INT_16_INTERLEAVED = 2;
+// const AUDIO_FORMAT_INT_16_INTERLEAVED = 2;
 
 let find = function (...args) {
   if (args.length === 0) return addon.find();
